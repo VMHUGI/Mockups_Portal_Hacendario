@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    
+    <div class="container" style="margin-top: 50px;">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-3">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="display-2">
+                                <b id="mockup01-paginacion">01</b>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+
+                            <div class="card  border-light" style="width: 200px;">
+                                <div class="row">
+                                    
+                                        <div class="p">01</div>
+                                    
+                                    <div class="col">
+                                        <div class="progress" id="mockup01-progressbar" style="height: 5px;margin-top: 10px;width: 150px;">
+                                        </div>
+                                    </div>
+                                        <div class="p">04</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-8" id="mockup01-tittle">
+                </div>
+
+            </div>
+        </div>
+        <div class="container" style="margin-top: 50px;margin-bottom: 50px;">
+
+            <div class="row">
+                <div class="col-1">
+                    <!-- <div class="btn-group-vertical btn-group-toggle" data-toggle="buttons" id="radio-button-01mock">
+                        <label class="btn btn-outline-primary active" style="border-color: white;">
+                            <input type="radio" name="options" id="option1" autocomplete="off" checked> <b style="color:#95ACF0">01</b> 
+                        </label>
+                        <label class="btn btn-outline-primary" style="border-color: white;">
+                            <input type="radio" name="options" id="option2" autocomplete="off"> <b style="color:#95ACF0">02</b>
+                        </label>
+                        <label class="btn btn-outline-primary" style="border-color: white;">
+                            <input type="radio" name="options" id="option3" autocomplete="off"> <b style="color:#95ACF0">03</b> 
+                        </label>
+                        <label class="btn btn-outline-primary" style="border-color: white;">
+                            <input type="radio" name="options" id="option4" autocomplete="off"> <b style="color:#95ACF0">04</b>
+                        </label>
+                    </div> -->
+                    <div class="btn-group-vertical" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-outline-primary" style="border-color: white;" checked>01</button>
+                        <button type="button" class="btn btn-outline-primary" style="border-color: white;">02</button>
+                        <button type="button" class="btn btn-outline-primary" style="border-color: white;">03</button>
+                        <button type="button" class="btn btn-outline-primary" style="border-color: white;">04</button>
+                    </div>
+                </div>
+
+                <div class="col-11" id="mockup01-frame">
+                    
+                </div>
+                <script>
+                    
+                    var pag = document.getElementById("mockup01-paginacion")
+                    var tittle = document.getElementById("mockup01-tittle")
+                    var frame = document.getElementById("mockup01-frame")
+                    var bar = document.getElementById("mockup01-progressbar")
+                    var num = null;
+                    var ele = document.querySelectorAll(".btn-group-vertical > button.btn");
+                    
+                    for(var i=0; i<ele.length; i++){
+                        ele[i].addEventListener("click", function(){
+                            num = +this.innerHTML;
+                            pag.innerHTML = '0' +num;
+                            tittle.innerHTML = `<h1>Lorem ipsum dolor sit amet, consecte adipiscing elit ${num}</h1>`
+                            tittle.innerHTML += `<p>Consectetuer adipiscing elit, sed diam nibh euismod tincidunt ut laoreet dolore ${num}</p>`
+                            frame.innerHTML = `<div class="card rouded-border-0" style="background-color: #9${num}${num}CF${num};height: 500px;"></div>`
+                            bar.innerHTML = `<div class="progress-bar" role="progressbar" style="width: ${num*(25)}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="color:#95ACF0"></div>`
+                        });
+                    }
+
+                </script>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
